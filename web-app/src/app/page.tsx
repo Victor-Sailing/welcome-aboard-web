@@ -1,33 +1,21 @@
-'use client';
-
-import React from 'react';
-// We use the direct paths to ensure Linux finds the files
-import { useLocale } from '../lib/locale-context'; 
-import { translations } from '../lib/i18n'; 
-
-export default function Home() {
-  const { locale } = useLocale();
-  
-  // This line is the key: it forces the page to refresh when 'locale' changes
-  const t = translations[locale as keyof typeof translations] || translations['en'];
-
-  return (
-    <main className="relative min-h-screen bg-[#063954] flex flex-col items-center justify-center p-24">
-      
-      {/* 1. THE HEADING: This is wired to the i18n dictionary */}
-      <h1 className="text-6xl font-serif italic text-[#F5F2E9] tracking-tighter text-center">
-        {t.welcome}
-      </h1>
-      
-      {/* 2. THE SUBTITLE: This manually checks the code */}
-      <div className="mt-4 text-[#F5F2E9] opacity-60 font-sans tracking-[0.2em] uppercase text-xs text-center">
-        {locale === 'en' && 'Luxury Vessel Management'}
-        {locale === 'es' && 'Gestión de Embarcaciones de Lujo'}
-        {locale === 'fr' && 'Gestion de Navires de Luxe'}
-        {locale === 'de' && 'Luxusschiffsmanagement'}
-        {locale === 'it' && 'Gestione di Navigazione di Lusso'}
-      </div>
-
-    </main>
-  );
-}
+export default function ComingSoon() {
+    return (
+      <main className="min-h-screen bg-[#063954] flex flex-col items-center justify-center p-8">
+        <div className="max-w-2xl text-center space-y-8">
+          <h2 className="text-[#27A8BE] uppercase tracking-[0.3em] text-sm font-sans">
+            Welcome Aboard
+          </h2>
+          <h1 className="text-5xl md:text-7xl font-serif italic text-[#F5F2E9] tracking-tighter">
+            The Horizon is Near
+          </h1>
+          <p className="text-[#F5F2E9]/60 font-sans tracking-widest uppercase text-xs leading-relaxed max-w-md mx-auto">
+            Our digital experience is currently being prepared. 
+            Luxury vessel management, redefined.
+          </p>
+          <div className="pt-8">
+            <div className="w-12 h-[1px] bg-[#27A8BE] mx-auto opacity-50"></div>
+          </div>
+        </div>
+      </main>
+    );
+  }
